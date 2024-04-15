@@ -135,7 +135,6 @@ class ProductTest < Minitest::Test
       Product.create!(product_data)
     end
 
-
     # creating the orders:
     # 2 for MacOs
     # 2 for Linux
@@ -153,7 +152,6 @@ class ProductTest < Minitest::Test
     Order.create!(products: [created_products[3]], customer: customer, price_cents: created_products[3].price_cents)
     Order.create!(products: [created_products[7]], customer: customer, price_cents: created_products[7].price_cents)
     Order.create!(products: [created_products[7]], customer: customer, price_cents: created_products[7].price_cents)
-
 
     assert_equal number_of_products + 10, Product.count
     assert_equal number_of_orders + 10, Order.count
